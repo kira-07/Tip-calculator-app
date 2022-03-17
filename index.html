@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="splitter"/>
+    </div>
+    <main>
+      <div class="flex-container">
+        <div class="form">
+            <label for="bill">Bill</label>
+            <div class="icon-inside">
+              <img src="./images/icon-dollar.svg" alt="dollar"/>
+              <input type="text" id="bill" name="bill"/>
+            </div>
+            
+            <label for="selecttip">Select Tip %</label>
+            <div class="selecttip">
+              <input type="button" class="btn" onclick="calculate(this)" id="fivepercent" name="fivepercent" value="5%">
+              <input type="button" class="btn" onclick="calculate(this)" id="tenpercent" name="tenpercent" value="10%">
+              <input type="button" class="btn" onclick="calculate(this)" id="fifteenpercent" name="fifteenpercent" value="15%">
+              <input type="button" class="btn" onclick="calculate(this)" id="twentyfivepercent" name="twentyfivepercent" value="25%">
+              <input type="button" class="btn" onclick="calculate(this)" id="fiftypercent" name="fiftypercent" value="50%">
+              <input type="text" onclick="calculate(this)" id="custompercent" name="custompercent" placeholder="Custom">
+            </div>
+            
+            <div>
+              <label for="numberofpeople">Number of People</label>
+              <span id="error-message"></span>
+            </div>
+            <div class="icon-inside">
+              <img src="./images/icon-person.svg" alt="person"/>
+              <input type="text" id="numberofpeople" name="numberofpeople"/> 
+            </div> 
+        </div>
+        <div class="calculation-container">
+          <div>
+            <div class="result-container">
+              <div>
+                <p>Tip Amount<br>
+                  <span>/ person</span>
+                </p>
+              </div>
+              <div id="tip-amount">
+                $0.00
+              </div>
+            </div>
+            <div class="result-container">
+              <div>
+                <p>Total<br>
+                  <span>/ person</span>
+                </p>
+              </div>
+              <div id="total">
+                $0.00
+              </div>
+            </div>       
+          </div>
+          <div>
+            <button id="reset" onclick="reset()">Reset</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Kira</a>.
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
