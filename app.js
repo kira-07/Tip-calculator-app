@@ -2,16 +2,14 @@ function calculate(event){
     hideErrorMessage();
     toggleActiveState(event);
 
-    let tipPercentage = parseInt(event.value.replace('%',''));
-    let bill = parseInt(document.getElementById("bill").value);
-    console.log();
     let nbOfPeople = parseInt(document.getElementById("numberofpeople").value);
     if(nbOfPeople == 0){
         displayErrorMessage("Can't be zero");
     } else{
+        let tipPercentage = parseInt(event.value.replace('%',''));
+        let bill = parseInt(document.getElementById("bill").value);
         let tipAmount = calculateTipAmountPerPerson(bill, tipPercentage, nbOfPeople);
         let total = calculateTotalPerPerson(bill, tipAmount, nbOfPeople);
-    
         document.getElementById("tip-amount").innerText = "$" + tipAmount.toFixed(2);
         document.getElementById("total").innerText = "$" + total.toFixed(2);
     }
